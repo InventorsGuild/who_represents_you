@@ -1,0 +1,49 @@
+   var fs = require('fs'),
+    https = require('https'),
+    express = require('express'),
+    app = express();
+
+    https.createServer({
+    key: `-----BEGIN RSA PRIVATE KEY-----
+MIICXgIBAAKBgQCr56JkpVK46hl2Trgjhq8BDjU6dhVUOSMP7cj1gjUQdAG1f/i/
+2evnG9N9ctBjddCBMlyq22NpOVc4LCSpr7VRQ+ue7ujLowrN9u+sH+6XK5PEqwYc
+a1mNii5fnHiWFk3jDE16i1bMbGCAt8Eg+SmepS8wx8YIkCPxUrVGRmz/WwIDAQAB
+AoGBAKgvdRNRKFDgQM8eD0w6vkejFfK/ivie+i3gb+e7X51cUju4G6/gTswKzm0D
+Atz8bGWq1z0WbfmJ70p27dvSm+puOeDYUezsKpn7R5LUODXAo6GWrqELuEMealIT
+Gve9EzataLkiPVWDeSwH7SciWMB7HSQynicUJ/He6lVerTHhAkEA3BtN0cCFKvyB
+lwdBd1HffflVNRjIqAYflMaxOMjKL9LyDfjiYW6DqozNDFilrCsxl83p+Kl6SBPY
+1ssWj5nj6wJBAMfwEcyADhn18WqOz5FeA6It0QKQj470PDRUivcvLR+VDsywa+Xt
+ihepHnZtCG6t/wiK4MSJrZgS8jxYG931JlECQQCgBrntZitrtWoChCP0vHHhBQYO
+NJauksUjRdJTlqhpXNTfk7QDYnYX6YarE0hghIbp96vEPnPJM6TThZRBk4FBAkAs
+8NZfXC1PQowIQp9/cl1ot9myNOI/5MAflx1BYHZJEg0oj0NBhHo0xUvWnL13e17H
+AchyBOxjMWcHj1p8Mp1xAkEArkJndaa+DGq4c+QUv10kzR1t/9PYn1FcQeqHhiZp
+MMqxFtuXXwB9jT0T6L3f4WpLLXBK4Evl3XOIUihQeEUVkg==
+-----END RSA PRIVATE KEY-----
+`,
+    cert: `-----BEGIN CERTIFICATE-----
+MIIC2zCCAkQCCQCI56LWOTJLCDANBgkqhkiG9w0BAQsFADCBsTELMAkGA1UEBhMC
+dXMxETAPBgNVBAgMCGFya2Fuc2FzMRMwEQYDVQQHDApTcHJpbmdkYWxlMRgwFgYD
+VQQKDA9ud2F0ZWNocGlvbmVlcnMxDTALBgNVBAsMBGxhYnMxITAfBgNVBAMMGG53
+YXRlY2hwaW9uZWVycy5kZG5zLm5ldDEuMCwGCSqGSIb3DQEJARYfcm9nZXJkZXdh
+eW5laGVybmFuZGV6QGdtYWlsLmNvbTAeFw0xNzA3MTYwNjMxNTVaFw0xNzA4MTUw
+NjMxNTVaMIGxMQswCQYDVQQGEwJ1czERMA8GA1UECAwIYXJrYW5zYXMxEzARBgNV
+BAcMClNwcmluZ2RhbGUxGDAWBgNVBAoMD253YXRlY2hwaW9uZWVyczENMAsGA1UE
+CwwEbGFiczEhMB8GA1UEAwwYbndhdGVjaHBpb25lZXJzLmRkbnMubmV0MS4wLAYJ
+KoZIhvcNAQkBFh9yb2dlcmRld2F5bmVoZXJuYW5kZXpAZ21haWwuY29tMIGfMA0G
+CSqGSIb3DQEBAQUAA4GNADCBiQKBgQCr56JkpVK46hl2Trgjhq8BDjU6dhVUOSMP
+7cj1gjUQdAG1f/i/2evnG9N9ctBjddCBMlyq22NpOVc4LCSpr7VRQ+ue7ujLowrN
+9u+sH+6XK5PEqwYca1mNii5fnHiWFk3jDE16i1bMbGCAt8Eg+SmepS8wx8YIkCPx
+UrVGRmz/WwIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAAWDELqQaeLr3S0kHZ1XEQZl
+95zjyrpZgXTv4d8aW+K0pXy6h6ceJbtgP/irpKWdsySE4IS5jNPeOKFYUzf7imC2
+wqsCj+9howoq4SOR/GAsyNbXEpKqAUniwv8UKG6TpdJnUWYVCFmtoKssrl/Lymze
+MqSqBHkfU802mpBaU3Yn
+-----END CERTIFICATE-----
+`
+
+    }, app).listen(3000);
+
+    app.use('/static', express.static('public'))
+
+    app.get('/', function (req, res) {
+      res.sendFile(__dirname + '/public/index.html');
+    });
