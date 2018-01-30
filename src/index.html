@@ -12,6 +12,8 @@
 </head>
 
 <body>
+
+
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -42,19 +44,23 @@
 
     </div>
   </nav>
+
   <div class="container" style="padding-top:60px;">
+
     <div id="warningMessage" class="collapse">
       <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
         <i class="fa fa-info-circle"></i> It appears we're having issues getting your location, please use the search bar to find your address!
       </div>
     </div>
+
     <div id="Confirmation" class="collapse">
       <div class="alert alert-success">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
         <p id="dateResult"></p>
       </div>
     </div>
+
     <div id="greeting">
       <div class="col-lg-12" style="padding-top:-5c0px;">
         <h1 style="margin-top: -10px;">Who represents you?</h1>
@@ -72,9 +78,13 @@
 
   </div>
 
+  <div id="reactRoot"></div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyBjpgOEvMjZHO4EPOcIdUJvmf9xVEntM9g"></script>
   <script src="./js/custom.js"></script>
+
+  <script src="./js/react.tsx"></script>
 
 </body>
 
