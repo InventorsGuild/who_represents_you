@@ -1,18 +1,24 @@
 {
-  "name": "express-example",
+  "name": "test",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./ --out-dir docs",
+    "pretty":
+      "prettier --tab-width 2 --print-width 100 --single-quote --jsx-bracket-same-line --arrow-parens 'always' parser 'typescript' --write 'src/**/*.{js,jsx,json,css}'"
   },
   "dependencies": {
-    "body-parser": "~1.17.1",
+    "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "express": "~4.15.2",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
     "jade": "~1.11.0",
-    "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2",
-    "stylus": "0.54.5"
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.5.1",
+    "prettier": "^1.10.2"
   }
 }
