@@ -13,77 +13,10 @@
 
 <body>
 
-
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-
-      <div class="col-lg-6">
-
-        <!--NavBar Title-->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a style="cursor: pointer;" class="navbar-brand" onclick="navPage('representativeResults')">Who represents you?</a>
-        </div>
-      </div>
-
-      <!--SearchBox-->
-      <div class="col-lg-4" style="padding-top:10px;">
-        <input id="txtPlaces" placeholder="leave blank to search by your location..." class="form-control" id="searchTextField" type="text"
-          size="50">
-      </div>
-
-      <!--Submit Button-->
-      <div class="col-lg-1" style="padding-top:10px;padding-left:-30px;">
-        <button onclick="getInfo()" type="button" class="btn btn-primary visible-lg visible-md">Submit</button>
-      </div>
-
-    </div>
-  </nav>
-
-  <div class="container" style="padding-top:60px;">
-
-    <div id="warningMessage" class="collapse">
-      <div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <i class="fa fa-info-circle"></i> It appears we're having issues getting your location, please use the search bar to find your address!
-      </div>
-    </div>
-
-    <div id="Confirmation" class="collapse">
-      <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <p id="dateResult"></p>
-      </div>
-    </div>
-
-    <div id="greeting">
-      <div class="col-lg-12" style="padding-top:-5c0px;">
-        <h1 style="margin-top: -10px;">Who represents you?</h1>
-        <p>This simple yet powerful tool will allow you to see your elected officials from a Federal level all the way down
-          to a local level, if you have issues getting your location, or want to check on another location, type your address
-          in the search bar above and click the "Submit" </p>
-        <br>
-      </div>
-    </div>
-
-    <div id="representativeResults">
-
-    </div>
-
-
-  </div>
-
   <div id="reactRoot"></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyBjpgOEvMjZHO4EPOcIdUJvmf9xVEntM9g"></script>
-  <script src="./js/custom.js"></script>
-
+  <script src="./js/custom.ts"></script>
   <script src="./js/react.tsx"></script>
 
 </body>
